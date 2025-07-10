@@ -1,0 +1,57 @@
+#######################################
+# Syntax Coloring Map For Unit Step16
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+UnitStep16	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+getValue	KEYWORD2
+setLedConfig	KEYWORD2
+getLedConfig	KEYWORD2
+setLedBrightness	KEYWORD2
+getLedBrightness	KEYWORD2
+setSwitchState	KEYWORD2
+getSwitchState	KEYWORD2
+setRgbConfig	KEYWORD2
+getRgbConfig	KEYWORD2
+setRgbBrightness	KEYWORD2
+getRgbBrightness	KEYWORD2
+setRgb	KEYWORD2
+getRgb	KEYWORD2
+setRValue	KEYWORD2
+setGValue	KEYWORD2
+setBValue	KEYWORD2
+saveToFlash	KEYWORD2
+getVersion	KEYWORD2
+getAddress	KEYWORD2
+setAddress	KEYWORD2
+setDefaultConfig	KEYWORD2
+printRegisters	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+UNIT_STEP16_DEFAULT_I2C_ADDRESS	LITERAL1
+UNIT_STEP16_REG_VALUE	LITERAL1
+UNIT_STEP16_REG_LED_CONFIG	LITERAL1
+UNIT_STEP16_REG_LED_BRIGHTNESS	LITERAL1
+UNIT_STEP16_REG_SWITCH	LITERAL1
+UNIT_STEP16_REG_RGB_CONFIG	LITERAL1
+UNIT_STEP16_REG_RGB_BRIGHTNESS	LITERAL1
+UNIT_STEP16_REG_RGB_VALUE	LITERAL1
+UNIT_STEP16_REG_R_VALUE	LITERAL1
+UNIT_STEP16_REG_G_VALUE	LITERAL1
+UNIT_STEP16_REG_B_VALUE	LITERAL1
+UNIT_STEP16_REG_SAVE_FLASH	LITERAL1
+UNIT_STEP16_REG_VERSION	LITERAL1
+UNIT_STEP16_REG_ADDRESS	LITERAL1
+UNIT_STEP16_REG_RGB_DEMO	LITERAL1 

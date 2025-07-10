@@ -1,0 +1,22 @@
+{
+    "name": "M5UnitStep16",
+    "description": "Library for M5Stack M5Unit Step16",
+    "keywords": "M5UnitStep16",
+    "authors": {
+        "name": "M5Stack",
+        "url": "http://www.m5stack.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/m5stack/M5Unit-Step16.git"
+    },
+    "version": "1.0.0",
+    "frameworks": [
+        "arduino"
+    ],
+    "platforms": [
+        "espressif32",
+        "native"
+    ],
+    "headers": "unit_step16.hpp"
+}
