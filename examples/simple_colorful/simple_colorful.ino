@@ -25,8 +25,10 @@
 #define RAINBOW_STEP     (5)
 #define RAINBOW_DELAY    (20)
 
-// Create UnitStep16 object
-UnitStep16 step16;
+// UnitStep16 object Parameters: (I2C_address, I2C_wire_pointer)
+// - I2C_address: default is 0x48, you can change it if needed
+// - I2C_wire_pointer: default is &Wire, you can use &Wire1, &Wire2, etc. for different I2C buses
+UnitStep16 step16(0x48, &Wire);
 
 // Variables
 uint8_t lastValue = 0;

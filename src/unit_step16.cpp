@@ -64,82 +64,82 @@ int UnitStep16::writeRegister(uint8_t reg_addr, uint8_t *data, uint8_t len)
 uint8_t UnitStep16::getValue()
 {
     uint8_t value = 0;
-    readRegister(UNIT_STEP16_REG_VALUE, &value, 1);
+    readRegister(UNIT_STEP16_VALUE_REG, &value, 1);
     return value;
 }
 
 bool UnitStep16::setLedConfig(uint8_t config)
 {
-    return writeRegister(UNIT_STEP16_REG_LED_CONFIG, &config, 1) == 0;
+    return writeRegister(UNIT_STEP16_LED_CONFIG_REG, &config, 1) == 0;
 }
 
 uint8_t UnitStep16::getLedConfig()
 {
     uint8_t config = 0;
-    readRegister(UNIT_STEP16_REG_LED_CONFIG, &config, 1);
+    readRegister(UNIT_STEP16_LED_CONFIG_REG, &config, 1);
     return config;
 }
 
 bool UnitStep16::setLedBrightness(uint8_t brightness)
 {
     if (brightness > 100) brightness = 100;
-    return writeRegister(UNIT_STEP16_REG_LED_BRIGHTNESS, &brightness, 1) == 0;
+    return writeRegister(UNIT_STEP16_LED_BRIGHTNESS_REG, &brightness, 1) == 0;
 }
 
 uint8_t UnitStep16::getLedBrightness()
 {
     uint8_t brightness = 0;
-    readRegister(UNIT_STEP16_REG_LED_BRIGHTNESS, &brightness, 1);
+    readRegister(UNIT_STEP16_LED_BRIGHTNESS_REG, &brightness, 1);
     return brightness;
 }
 
 bool UnitStep16::setSwitchState(uint8_t state)
 {
-    return writeRegister(UNIT_STEP16_REG_SWITCH, &state, 1) == 0;
+    return writeRegister(UNIT_STEP16_SWITCH_REG, &state, 1) == 0;
 }
 
 uint8_t UnitStep16::getSwitchState()
 {
     uint8_t state = 0;
-    readRegister(UNIT_STEP16_REG_SWITCH, &state, 1);
+    readRegister(UNIT_STEP16_SWITCH_REG, &state, 1);
     return state;
 }
 
 bool UnitStep16::setRgbConfig(uint8_t config)
 {
-    return writeRegister(UNIT_STEP16_REG_RGB_CONFIG, &config, 1) == 0;
+    return writeRegister(UNIT_STEP16_RGB_CONFIG_REG, &config, 1) == 0;
 }
 
 uint8_t UnitStep16::getRgbConfig()
 {
     uint8_t config = 0;
-    readRegister(UNIT_STEP16_REG_RGB_CONFIG, &config, 1);
+    readRegister(UNIT_STEP16_RGB_CONFIG_REG, &config, 1);
     return config;
 }
 
 bool UnitStep16::setRgbBrightness(uint8_t brightness)
 {
     if (brightness > 100) brightness = 100;
-    return writeRegister(UNIT_STEP16_REG_RGB_BRIGHTNESS, &brightness, 1) == 0;
+    return writeRegister(UNIT_STEP16_RGB_BRIGHTNESS_REG, &brightness, 1) == 0;
 }
 
 uint8_t UnitStep16::getRgbBrightness()
 {
     uint8_t brightness = 0;
-    readRegister(UNIT_STEP16_REG_RGB_BRIGHTNESS, &brightness, 1);
+    readRegister(UNIT_STEP16_RGB_BRIGHTNESS_REG, &brightness, 1);
     return brightness;
 }
 
 bool UnitStep16::setRgb(uint8_t r, uint8_t g, uint8_t b)
 {
     uint8_t rgb[3] = {r, g, b};
-    return writeRegister(UNIT_STEP16_REG_RGB_VALUE, rgb, 3) == 0;
+    return writeRegister(UNIT_STEP16_RGB_VALUE_REG, rgb, 3) == 0;
 }
 
 bool UnitStep16::getRgb(uint8_t *r, uint8_t *g, uint8_t *b)
 {
     uint8_t rgb[3];
-    if (readRegister(UNIT_STEP16_REG_RGB_VALUE, rgb, 3) != 0) {
+    if (readRegister(UNIT_STEP16_RGB_VALUE_REG, rgb, 3) != 0) {
         return false;
     }
     *r = rgb[0];
@@ -150,22 +150,22 @@ bool UnitStep16::getRgb(uint8_t *r, uint8_t *g, uint8_t *b)
 
 bool UnitStep16::setRValue(uint8_t r)
 {
-    return writeRegister(UNIT_STEP16_REG_R_VALUE, &r, 1) == 0;
+    return writeRegister(UNIT_STEP16_R_VALUE_REG, &r, 1) == 0;
 }
 
 bool UnitStep16::setGValue(uint8_t g)
 {
-    return writeRegister(UNIT_STEP16_REG_G_VALUE, &g, 1) == 0;
+    return writeRegister(UNIT_STEP16_G_VALUE_REG, &g, 1) == 0;
 }
 
 bool UnitStep16::setBValue(uint8_t b)
 {
-    return writeRegister(UNIT_STEP16_REG_B_VALUE, &b, 1) == 0;
+    return writeRegister(UNIT_STEP16_B_VALUE_REG, &b, 1) == 0;
 }
 
 bool UnitStep16::saveToFlash(uint8_t save)
 {
-    bool result = writeRegister(UNIT_STEP16_REG_SAVE_FLASH, &save, 1) == 0;
+    bool result = writeRegister(UNIT_STEP16_SAVE_FLASH_REG, &save, 1) == 0;
     delay(50);  // Wait for the save operation to complete
     return result;
 }
@@ -173,20 +173,20 @@ bool UnitStep16::saveToFlash(uint8_t save)
 uint8_t UnitStep16::getVersion()
 {
     uint8_t version = 0;
-    readRegister(UNIT_STEP16_REG_VERSION, &version, 1);
+    readRegister(UNIT_STEP16_VERSION_REG, &version, 1);
     return version;
 }
 
 uint8_t UnitStep16::getAddress()
 {
     uint8_t address = 0;
-    readRegister(UNIT_STEP16_REG_ADDRESS, &address, 1);
+    readRegister(UNIT_STEP16_ADDRESS_REG, &address, 1);
     return address;
 }
 
 bool UnitStep16::setAddress(uint8_t address)
 {
-    bool result = writeRegister(UNIT_STEP16_REG_ADDRESS, &address, 1) == 0;
+    bool result = writeRegister(UNIT_STEP16_ADDRESS_REG, &address, 1) == 0;
     delay(50);  // Wait for the save operation to complete
     return result;
 }

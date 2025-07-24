@@ -13,67 +13,67 @@
 /**
  * @brief Encoder value register (0x0-0xF)
  */
-#define UNIT_STEP16_REG_VALUE (0x00)
+#define UNIT_STEP16_VALUE_REG (0x00)
 
 /**
  * @brief LED configuration register
  */
-#define UNIT_STEP16_REG_LED_CONFIG (0x10)
+#define UNIT_STEP16_LED_CONFIG_REG (0x10)
 
 /**
  * @brief LED brightness register (0-100)
  */
-#define UNIT_STEP16_REG_LED_BRIGHTNESS (0x20)
+#define UNIT_STEP16_LED_BRIGHTNESS_REG (0x20)
 
 /**
  * @brief Rotation direction register
  */
-#define UNIT_STEP16_REG_SWITCH (0x30)
+#define UNIT_STEP16_SWITCH_REG (0x30)
 
 /**
  * @brief RGB on/off configuration
  */
-#define UNIT_STEP16_REG_RGB_CONFIG (0x40)
+#define UNIT_STEP16_RGB_CONFIG_REG (0x40)
 
 /**
  * @brief RGB brightness register (0-100)
  */
-#define UNIT_STEP16_REG_RGB_BRIGHTNESS (0x41)
+#define UNIT_STEP16_RGB_BRIGHTNESS_REG (0x41)
 
 /**
  * @brief RGB color value register (3 bytes)
  */
-#define UNIT_STEP16_REG_RGB_VALUE (0x50)
+#define UNIT_STEP16_RGB_VALUE_REG (0x50)
 
 /**
  * @brief Red color value register
  */
-#define UNIT_STEP16_REG_R_VALUE (0x50)
+#define UNIT_STEP16_R_VALUE_REG (0x50)
 
 /**
  * @brief Green color value register
  */
-#define UNIT_STEP16_REG_G_VALUE (0x51)
+#define UNIT_STEP16_G_VALUE_REG (0x51)
 
 /**
  * @brief Blue color value register
  */
-#define UNIT_STEP16_REG_B_VALUE (0x52)
+#define UNIT_STEP16_B_VALUE_REG (0x52)
 
 /**
  * @brief Save configuration to flash
  */
-#define UNIT_STEP16_REG_SAVE_FLASH (0xF0)
+#define UNIT_STEP16_SAVE_FLASH_REG (0xF0)
 
 /**
  * @brief Firmware version register
  */
-#define UNIT_STEP16_REG_VERSION (0xFE)
+#define UNIT_STEP16_VERSION_REG (0xFE)
 
 /**
  * @brief Device I2C address register
  */
-#define UNIT_STEP16_REG_ADDRESS (0xFF)
+#define UNIT_STEP16_ADDRESS_REG (0xFF)
 
 /**
  * @brief LED off
@@ -189,28 +189,6 @@
  * Communication is done via I2C protocol.
  */
 class UnitStep16 {
-private:
-    uint8_t _i2c_addr;  // I2C address of the device
-    TwoWire *_wire;     // Pointer to the I2C interface
-
-    /**
-     * @brief Read data from register
-     * @param reg_addr Register address to read from
-     * @param data Pointer to buffer to store read data
-     * @param len Number of bytes to read
-     * @return 0 on success, -1 on failure
-     */
-    int readRegister(uint8_t reg_addr, uint8_t *data, uint8_t len);
-
-    /**
-     * @brief Write data to register
-     * @param reg_addr Register address to write to
-     * @param data Pointer to data to write
-     * @param len Number of bytes to write
-     * @return 0 on success, -1 on failure
-     */
-    int writeRegister(uint8_t reg_addr, uint8_t *data, uint8_t len);
-
 public:
     /**
      * @brief Construct a new UnitStep16 object
@@ -389,6 +367,28 @@ public:
      * @note Serial must be initialized before calling this function
      */
     void printRegisters();
+
+private:
+    uint8_t _i2c_addr;  // I2C address of the device
+    TwoWire *_wire;     // Pointer to the I2C interface
+
+    /**
+     * @brief Read data from register
+     * @param reg_addr Register address to read from
+     * @param data Pointer to buffer to store read data
+     * @param len Number of bytes to read
+     * @return 0 on success, -1 on failure
+     */
+    int readRegister(uint8_t reg_addr, uint8_t *data, uint8_t len);
+
+    /**
+     * @brief Write data to register
+     * @param reg_addr Register address to write to
+     * @param data Pointer to data to write
+     * @param len Number of bytes to write
+     * @return 0 on success, -1 on failure
+     */
+    int writeRegister(uint8_t reg_addr, uint8_t *data, uint8_t len);
 };
 
 #endif  // UNIT_STEP16_HPP

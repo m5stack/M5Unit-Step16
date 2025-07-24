@@ -37,8 +37,10 @@
 #define BUTTON_BAR_Y           (220)   // Y position for button bar
 #define BUTTON_BAR_HEIGHT      (20)    // Height of button bar
 
-// UnitStep16 object
-UnitStep16 step16;
+// UnitStep16 object Parameters: (I2C_address, I2C_wire_pointer)
+// - I2C_address: default is 0x48, you can change it if needed
+// - I2C_wire_pointer: default is &Wire, you can use &Wire1, &Wire2, etc. for different I2C buses
+UnitStep16 step16(0x48, &Wire);
 
 // Test mode enumeration
 enum TestMode {
