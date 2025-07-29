@@ -9,7 +9,7 @@ With its concise and efficient design, this unit provides effective physical int
 
 ## Related Link
 
-- [Unit Step16 - Document & Datasheet](https://docs.m5stack.com/zh_CN/unit/Unit_Step16)
+- [Unit Step16 - Document & Datasheet](https://docs.m5stack.com/en/products/sku/U198)
 
 ## License
 
