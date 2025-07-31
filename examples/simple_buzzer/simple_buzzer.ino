@@ -90,7 +90,7 @@ void setup()
     step16.setLedBrightness(LED_BRIGHTNESS);  // LED brightness 60%
     step16.setRgbConfig(1);                   // Enable RGB
     step16.setRgbBrightness(RGB_BRIGHTNESS);  // RGB brightness 40%
-    step16.setSwitchState(0);                 // Clockwise direction
+    step16.setSwitchState(1);                 // Clockwise direction
 
     Serial.println("Instructions:");
     Serial.println("- Rotating the knob will play corresponding tones");

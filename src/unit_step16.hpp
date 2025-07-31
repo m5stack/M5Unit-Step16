@@ -108,17 +108,17 @@
 /**
  * @brief Clockwise
  */
-#define UNIT_STEP16_SWITCH_CLOCKWISE (0x00)
+#define UNIT_STEP16_SWITCH_CLOCKWISE (0x01)
 
 /**
  * @brief Counterclockwise
  */
-#define UNIT_STEP16_SWITCH_COUNTERCLOCKWISE (0x01)
+#define UNIT_STEP16_SWITCH_COUNTERCLOCKWISE (0x00)
 
 /**
  * @brief Default switch state
  */
-#define UNIT_STEP16_SWITCH_DEFAULT (UNIT_STEP16_SWITCH_COUNTERCLOCKWISE)
+#define UNIT_STEP16_SWITCH_DEFAULT (UNIT_STEP16_SWITCH_CLOCKWISE)
 
 /**
  * @brief RGB off
@@ -243,15 +243,15 @@ public:
     /**
      * @brief Set encoder rotation direction
      * @param state Direction state:
-     *              - 0: Clockwise
-     *              - 1: Counterclockwise
+     *              - 0: Counterclockwise
+     *              - 1: Clockwise
      * @return true on success, false on failure
      */
     bool setSwitchState(uint8_t state);
 
     /**
      * @brief Get current rotation direction
-     * @return Direction state (0: clockwise, 1: counterclockwise)
+     * @return Direction state (0: counterclockwise, 1: clockwise)
      */
     uint8_t getSwitchState();
 
